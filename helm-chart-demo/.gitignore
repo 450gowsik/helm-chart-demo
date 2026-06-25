@@ -1,0 +1,13 @@
+# Helm chart package outputs
+*.tgz
+
+# Local values and overrides
+*values-local.yaml
+*.secret.yaml
+secrets/
+
+# IDE files and OS metadata
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

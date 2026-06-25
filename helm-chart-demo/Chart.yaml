@@ -1,0 +1,6 @@
+apiVersion: v2
+name: nginx-chart
+description: A production-style Helm Chart that packages Nginx into reusable templates with configurable values.
+type: application
+version: 1.0.0
+appVersion: "1.25.3"
