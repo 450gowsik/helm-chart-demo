@@ -6,7 +6,7 @@ A production-ready hands-on DevOps project demonstrating how to package, configu
 
 Below is the workflow showing the journey from source code control to deployment in a Kubernetes Cluster:
 
-![Architecture Diagram](screenshots/architecture.png)
+![Architecture Diagram](helm-chart-demo/screenshots/architecture.png)
 
 ```
 GitHub (Source) ──> Helm Chart (Template) ──> Helm Release (Deployment) ──> Kubernetes Cluster ──> Nginx Pods
@@ -301,6 +301,15 @@ NAME                                     READY   STATUS    RESTARTS   AGE
 nginx-app-nginx-chart-54bd478bd4-fztq6   1/1     Running   0          47s
 nginx-app-nginx-chart-54bd478bd4-gsxcb   1/1     Running   0          47s
 ```
+
+Access the application via port-forwarding:
+```bash
+kubectl port-forward svc/nginx-app-nginx-chart 8080:80
+```
+
+Verify in your browser at `http://127.0.0.1:8080`:
+
+![Nginx Welcome Page Output](helm-chart-demo/screenshots/nginx_output.png)
 
 ### Step 3: Upgrade Flow (Scaling up to 4 replicas)
 Modify `replicaCount` to `4` in `values.yaml` and execute the upgrade command:
